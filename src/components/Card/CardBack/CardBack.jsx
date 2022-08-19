@@ -3,6 +3,7 @@ import cardBackBG from '../../../images/bg-card-back.png'
 import { CardInformationContext } from '../../../context/CardInformationContext'
 import { removeSpaces } from '../../../helpers'
 import with3DRotation from '../../../hocs/with3DRotation'
+import useValidation from '../../../hooks/useValidation'
 
 import styles from './cardback.module.css'
 
@@ -16,6 +17,7 @@ const cardFrontStyle = {
 const CardBack = forwardRef((props, ref) => {
 
     const { cardInformation: { cvc } } = useContext(CardInformationContext)
+    const { isNumber } = useValidation()
 
     const [cvcPlaceholder] = useState(Array(3).fill("*"))
 
@@ -31,7 +33,7 @@ const CardBack = forwardRef((props, ref) => {
             <div className={styles.card__cvc}>
                 {cvcPlaceholder.map((item, index) => (
                     <span key={index}>
-                        {removeSpaces(cvc)[index] ? <span>{removeSpaces(cvc)[index]}</span> : <span style={{ opacity: '.5' }}>{item}</span>}
+                        {(removeSpaces(cvc)[index] && isNumber(removeSpaces(cvc)[index])) ? <span>{removeSpaces(cvc)[index]}</span> : <span style={{ opacity: '.5' }}>{item}</span>}
                     </span>
                 ))}
             </div>

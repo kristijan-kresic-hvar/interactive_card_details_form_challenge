@@ -43,6 +43,8 @@ function useValidation() {
 
         if (!str) return false
 
+        console.log(str)
+
         return validator.isNumeric(str.replace(/ /g, ''))
     }
 
@@ -52,7 +54,7 @@ function useValidation() {
         isValidUsername,
         isValidYear,
         isEmpty,
-        isNumber
+        isNumber,
     }
 }
 
