@@ -48,9 +48,9 @@ const CardFront = forwardRef((props, ref) => {
             ref={ref}
             className={styles.card}
             style={cardFrontStyle}
-            onMouseEnter={props.onMouseEnter || null}
-            onMouseLeave={props.onMouseLeave || null}
-            onMouseMove={props.onMouseMove || null}
+            onMouseEnter={(props.clientWidth >= 1200) ? props.onMouseEnter : null}
+            onMouseLeave={(props.clientWidth >= 1200) ? props.onMouseLeave : null}
+            onMouseMove={(props.clientWidth >= 1200) ? props.onMouseMove : null}
         >
             <div className={styles.card__logo}>
                 <img src={logoSVG} alt="card logo" />

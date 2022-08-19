@@ -4,6 +4,7 @@ import headerBG from '../../images/bg-main-mobile.png'
 
 import CardFront from '../Card/CardFront/CardFront'
 import CardBack from '../Card/CardBack/CardBack'
+import useClientWidth from '../../hooks/useClientWidth'
 
 const headerStyle = {
     background: `url(${headerBG})`,
@@ -13,11 +14,16 @@ const headerStyle = {
 }
 
 const Header = () => {
+
+    const clientWidth = useClientWidth()
+
+    console.log("render")
+
     return (
         <div className={styles.header} style={headerStyle}>
             <div className={styles.cardWrapper}>
-                <CardFront />
-                <CardBack />
+                <CardFront clientWidth={clientWidth} />
+                <CardBack clientWidth={clientWidth} />
             </div>
         </div>
     )

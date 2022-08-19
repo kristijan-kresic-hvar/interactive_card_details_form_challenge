@@ -22,11 +22,11 @@ const CardBack = forwardRef((props, ref) => {
     return (
         <div
             ref={ref}
-            onMouseEnter={props.onMouseEnter || null}
-            onMouseLeave={props.onMouseLeave || null}
+            onMouseEnter={(props.clientWidth >= 1200) ? props.onMouseEnter : null}
+            onMouseLeave={(props.clientWidth >= 1200) ? props.onMouseLeave : null}
             className={styles.card}
             style={cardFrontStyle}
-            onMouseMove={props.onMouseMove || null}
+            onMouseMove={(props.clientWidth >= 1200) ? props.onMouseMove : null}
         >
             <div className={styles.card__cvc}>
                 {cvcPlaceholder.map((item, index) => (
