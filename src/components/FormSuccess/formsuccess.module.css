@@ -1,0 +1,63 @@
+.success {
+    text-align: center;
+    min-width: 327px;
+    animation: fadeInUp 800ms forwards;
+}
+
+.success__icon img {
+    margin: 0 auto;
+    margin-bottom: 35px;
+}
+
+.success__body h2 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 3.42222px;
+    color: #21092F;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.success__body p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    color: #8F8694;
+}
+
+.success__body {
+    margin-bottom: 50px;
+}
+
+.success__submit {
+    background: #21092F;
+    border-radius: .5rem;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 2rem;
+    font-family: 'Space Grotesk';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0.2;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
